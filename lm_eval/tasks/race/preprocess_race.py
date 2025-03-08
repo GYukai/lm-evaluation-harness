@@ -38,3 +38,22 @@ def doc_to_target(doc):
     letter_to_num = {"A": 0, "B": 1, "C": 2, "D": 3}
     answer = letter_to_num[last_problem(doc)["answer"]]
     return answer
+
+def doc_to_choice_train(doc):
+    problem = doc
+    choices = [problem["options"][i] for i in range(4)]
+    return choices
+
+
+def doc_to_text_train(doc):
+    text = "Article: " + doc["article"] + "\n\n"
+    question = "Question: " + doc["question"] + "\n"
+    text += question
+    return text
+
+
+def doc_to_target_train(doc):
+    letter_to_num = {"A": 0, "B": 1, "C": 2, "D": 3}
+    answer = letter_to_num[doc["answer"]]
+    return answer
+

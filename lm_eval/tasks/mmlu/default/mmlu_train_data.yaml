@@ -1,5 +1,10 @@
+
+
+"dataset_name": "all"
+"tag": "mmlu_train_data"
+
 dataset_path: cais/mmlu # a copy of `cais/mmlu` with no auxiliary_train split
-test_split: test
+test_split: auxiliary_train
 fewshot_split: dev
 fewshot_config:
   sampler: first_n
@@ -15,3 +20,4 @@ metadata:
   version: 1.0
 dataset_kwargs:
   trust_remote_code: true
+"task": "mmlu_train_data"
